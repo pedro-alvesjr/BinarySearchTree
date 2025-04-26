@@ -30,8 +30,6 @@ class BinarySearchTree:
                     temp = temp.right
 
     def contains(self, value):
-        if self.root == None:
-            return False
         temp = self.root
         while temp is not None:
             if value < temp.value:
@@ -41,3 +39,18 @@ class BinarySearchTree:
             else:
                 return True
         return False
+
+# Create a new BinarySearchTree instance
+bst = BinarySearchTree()
+
+# Test insert
+print(bst.insert(10))  # Should print True (tree was empty)
+print(bst.insert(5))   # Should print True (5 inserted to the left)
+print(bst.insert(15))  # Should print True (15 inserted to the right)
+print(bst.insert(10))  # Should print False (10 already exists)
+
+# Test contains
+print(bst.contains(10))  # Should print True
+print(bst.contains(5))   # Should print True
+print(bst.contains(15))  # Should print True
+print(bst.contains(20))  # Should print False (20 not in tree)
