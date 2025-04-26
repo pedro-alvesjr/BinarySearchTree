@@ -29,3 +29,15 @@ class BinarySearchTree:
                         return True
                     temp = temp.right
 
+    def contains(self, value):
+        if self.root == None:
+            return False
+        temp = self.root
+        while temp is not None:
+            if value < temp.value:
+                temp = temp.left
+            elif value > temp.value:
+                temp = temp.right
+            else:
+                return True
+        return False
